@@ -1,4 +1,8 @@
-.cache
-package.json
+node_modules
+dist
+.output
+.vinxi
+pnpm-lock.yaml
 package-lock.json
-public
+bun.lock
+routeTree.gen.ts
