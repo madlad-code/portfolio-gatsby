@@ -1,11 +1,11 @@
 [build]
   command = "npm install && npm run build"
-  publish = "dist/client"
+  publish = "dist"
 
 [build.environment]
-  NITRO_PRESET = "netlify"
   NODE_VERSION = "22"
 
-[[edge_functions]]
-  path = "/*"
-  function = "server"
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
