@@ -8,7 +8,7 @@ För att börja jobba med projektet lokalt:
 
 1. **Gå till projektmappen:**
    ```bash
-   cd /home/madlad/projects/portfolio-g
+   cd /home/madlad/projects/portfolio-gatsby
    ```
 
 2. **Starta utvecklingsservern:**
