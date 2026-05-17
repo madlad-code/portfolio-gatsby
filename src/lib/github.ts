@@ -31,6 +31,7 @@ interface GhRepo {
   archived: boolean;
 }
 
+// Härled projektstatus (building, active, etc.) baserat på GitHub-metadata eller senaste push
 function deriveStatus(repo: GhRepo): ProjectStatus {
   const topic = repo.topics?.find((t) => t.startsWith("status-"));
   if (topic) {
@@ -38,13 +39,16 @@ function deriveStatus(repo: GhRepo): ProjectStatus {
     if (["building", "active", "coursework", "concept", "finished", "archived"].includes(s)) return s;
   }
   if (repo.archived) return "archived";
+  
+  // Om ingen explicit status finns, använd tid sedan senaste push för att gissa status
   const days = (Date.now() - new Date(repo.pushed_at).getTime()) / (1000 * 60 * 60 * 24);
-  if (days < 30) return "building";
-  if (days < 180) return "active";
+  if (days < 30) return "building"; // Aktiv utveckling senast 30 dagarna
+  if (days < 180) return "active";  // Underhållet men inte nyligen uppdaterat
   return "finished";
 }
 
 export async function fetchProjects(): Promise<Project[]> {
+  // Hämta alla publika repositories för användaren
   const res = await fetch(
     `https://api.github.com/users/${GITHUB_USERNAME}/repos?per_page=100&sort=updated`,
     { headers: { Accept: "application/vnd.github+json" } },
@@ -54,14 +58,17 @@ export async function fetchProjects(): Promise<Project[]> {
 
   const ghProjects: Project[] = [];
   for (const r of repos) {
-    if (r.fork) continue;
+    if (r.fork) continue; // Hoppa över forkade repon
     const ov = PROJECT_OVERRIDES[r.name] ?? {};
     if (ov.hidden) continue;
+    
+    // Kombinera språk och topics för att skapa en "tech stack"-lista
     const stack =
       ov.stack ??
       ([r.language, ...(r.topics ?? []).filter((t) => !t.startsWith("status-"))]
         .filter(Boolean)
         .slice(0, 4) as string[]);
+    
     ghProjects.push({
       id: `gh-${r.id}`,
       title: ov.title ?? r.name,

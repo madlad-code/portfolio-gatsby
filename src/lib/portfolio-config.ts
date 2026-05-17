@@ -71,19 +71,4 @@ export const MANUAL_PROJECTS: Array<{
   url?: string;
   blurb?: string;
   featured?: boolean;
-}> = [
-  {
-    title: "Quant Portfolio Engine",
-    stack: ["Python", "Black-Scholes", "Monte Carlo"],
-    status: "building",
-    featured: true,
-    blurb: "Motor för portföljanalys och prissättning. Utvecklingen av Black-Scholes och Monte Carlo-simuleringar stärker min förståelse för kvantitativ finans och statistisk modellering.",
-  },
-  {
-    title: "RISC-V Pipeline",
-    stack: ["SystemVerilog", "FPGA", "Quartus"],
-    status: "coursework",
-    featured: true,
-    blurb: "5-stegs RV32I-pipeline på Cyclone V. Projektet fördjupar min expertis inom datorarkitektur och digital hårdvarukonstruktion med fokus på timing och resurseffektivitet.",
-  },
-];
+}> = [];

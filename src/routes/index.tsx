@@ -11,7 +11,7 @@ export const Route = createFileRoute("/")({
       {
         name: "description",
         content:
-          "Oscar Enghag — Civ.ing. Datateknik LTH. FPGA / SystemVerilog, RISC-V, quant & systems. Live från GitHub.",
+          "Oscar Enghag — Civ.ing. Datateknik LTH. FPGA, RISC-V, formula student simulation.",
       },
     ],
   }),
@@ -166,13 +166,13 @@ function Index() {
       <header>
         <h1 className="text-2xl font-bold tracking-wider text-accent-ink">OSCAR ENGHAG</h1>
         <p className="mt-3 text-ink-muted">
-          Civ.ing. Datateknik · LTH (2025–) <span className="text-ink-faint">|</span>{" "}
-          FPGA / SystemVerilog · RISC-V <span className="text-ink-faint">|</span>{" "}
-          Försvarsmakten · Livgardet <span className="text-ink-faint">|</span>{" "}
+          Civ.ing. Datateknik · LTH <span className="text-ink-faint">|</span>{" "}
+          Lågnivå & Högprecisionsteknik <span className="text-ink-faint">|</span>{" "}
+          Quant & Systems Engineering <span className="text-ink-faint">|</span>{" "}
           Lund, SE
         </p>
         <p className="mt-4 max-w-2xl text-[13px] text-ink-muted">
-          Jag drivs av en kombination av teknisk nyfikenhet och ett högt tempo i mitt lärande, vilket gör att jag snabbt kan sätta mig in i och lösa komplexa systemproblem. Min bakgrund som elitgymnast har gett mig en extrem disciplin och ett vinnande mindset som jag applicerar på varje kodrad och hårdvarukonstruktion jag tar mig an.
+          Jag strävar efter att bli expert inom systemnära programmering med en djup fascination för lågnivå-implementationer och högprecisionsteknik. Genom att kombinera kvantitativ finans med rigorös ingenjörskonst bygger jag högpresterande system där varje klockcykel räknas. Min bakgrund som elitgymnast har gett mig den disciplin och det fokus som krävs för att bemästra komplex teknik i högt tempo.
         </p>
         <nav className="mt-6 flex flex-wrap gap-x-5 gap-y-1 text-accent-ink">
           {LINKS.map((l) => (
