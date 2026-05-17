@@ -58,7 +58,14 @@ function ContribGraph() {
   }
   if (cur.length) weeks.push(cur);
 
-  const levelBg = ["bg-rule/40", "bg-accent-ink/25", "bg-accent-ink/50", "bg-accent-ink/75", "bg-accent-ink"];
+  // GitHub-style green levels
+  const levelBg = [
+    "bg-rule/40",
+    "bg-[#0e4429]",
+    "bg-[#006d32]",
+    "bg-[#26a641]",
+    "bg-[#39d353]",
+  ];
 
   // month labels
   const monthLabels: { col: number; label: string }[] = [];
