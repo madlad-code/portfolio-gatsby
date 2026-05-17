@@ -23,8 +23,7 @@ const STATUS_ORDER: Record<string, number> = {
 
 const LINKS = [
   { label: "GitHub", href: `https://github.com/${GITHUB_USERNAME}` },
-  { label: "LinkedIn", href: "https://www.linkedin.com/in/oscar-enghag/" },
-  { label: "Email", href: "mailto:oscar.enghag@gmail.com" },
+  { label: "LinkedIn", href: "https://www.linkedin.com/in/oscar-enghag-2b4902238/" },
 ];
 
 function SectionHeader({ n, title }: { n: string; title: string }) {
@@ -174,12 +173,14 @@ function Index() {
         <p className="mt-4 max-w-2xl text-[13px] text-ink-muted">
           Jag strävar efter att bli expert inom systemnära programmering med en djup fascination för lågnivå-implementationer och högprecisionsteknik. Genom att kombinera kvantitativ finans med rigorös ingenjörskonst bygger jag högpresterande system där varje klockcykel räknas. Min bakgrund som elitgymnast har gett mig den disciplin och det fokus som krävs för att bemästra komplex teknik i högt tempo.
         </p>
-        <nav className="mt-6 flex flex-wrap gap-x-5 gap-y-1 text-accent-ink">
+        <nav className="mt-6 flex flex-wrap gap-x-5 gap-y-1 text-accent-ink items-center">
           {LINKS.map((l) => (
             <a key={l.label} href={l.href} target="_blank" rel="noreferrer" className="hover:underline">
               {l.label}
             </a>
           ))}
+          <span className="text-ink-faint">|</span>
+          <span className="text-ink-muted">oscarenghag@gmail.com</span>
         </nav>
       </header>
 

@@ -27,39 +27,27 @@ export interface ProjectOverride {
 }
 
 export const PROJECT_OVERRIDES: Record<string, ProjectOverride> = {
-  "fs-lap-sim": {
-    title: "FS Lap Sim",
+  "formula_student_simulation": {
     status: "building",
-    stack: ["Python", "NumPy", "Pacejka"],
     featured: true,
-    blurb: "Vehicle dynamics-simulator för Formula Student. Genom att implementera Pacejkas däckmodell bygger projektet djup expertis inom tillämpad matematik och fordonsdynamik.",
   },
   "option_pricing": {
-    title: "Quant Portfolio Engine",
     status: "building",
-    stack: ["Python", "Black-Scholes", "Monte Carlo"],
     featured: true,
-    blurb: "Motor för portföljanalys och prissättning. Utvecklingen av Black-Scholes och Monte Carlo-simuleringar stärker min förståelse för kvantitativ finans och statistisk modellering.",
   },
   "trailing_stop_loss": {
-    title: "Trailing Stop-Loss ML",
     status: "active",
-    stack: ["Python", "ML", "Indicators"],
     featured: false,
   },
   "Worker-Simulation": {
-    title: "Worker Simulation",
     status: "coursework",
-    stack: ["Python", "Concurrency", "GUI"],
   },
   "risc-v-pipeline": {
-    title: "RISC-V Pipeline",
     status: "coursework",
-    stack: ["SystemVerilog", "FPGA", "Quartus"],
     featured: true,
-    blurb: "5-stegs RV32I-pipeline på Cyclone V. Projektet fördjupar min expertis inom datorarkitektur och digital hårdvarukonstruktion med fokus på timing och resurseffektivitet.",
   },
   "portfolio-gatsby": { hidden: true },
+  "portfolio-vite": { hidden: true },
   "madlad-code": { hidden: true },
 };
 
