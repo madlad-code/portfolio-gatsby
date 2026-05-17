@@ -132,7 +132,7 @@ function ProjectCard({ p }: { p: Project }) {
 function CardGrid({ items }: { items: Project[] }) {
   if (!items.length) return <p className="text-xs text-ink-faint">— inga projekt —</p>;
   return (
-    <div className="grid gap-3 sm:grid-cols-2">
+    <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5">
       {items.map((p) => <ProjectCard key={p.id} p={p} />)}
     </div>
   );
@@ -156,7 +156,7 @@ function Index() {
   const others = sorted.filter((p) => !active.includes(p));
 
   return (
-    <main className="mx-auto min-h-screen max-w-3xl px-6 py-12 text-[14px] leading-relaxed">
+    <main className="mx-auto min-h-screen max-w-[100%] px-10 py-12 text-[14px] leading-relaxed">
       <header>
         <h1 className="text-2xl font-bold tracking-wider text-accent-ink">OSCAR ENGHAG</h1>
         <p className="mt-3 text-ink-muted">
@@ -194,7 +194,7 @@ function Index() {
       <div className="mt-4"><CardGrid items={others} /></div>
 
       <SectionHeader n="04" title="STACK" />
-      <div className="mt-4 grid gap-3 sm:grid-cols-2">
+      <div className="mt-4 grid gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5">
         {[
           { k: "Hardware", v: "SystemVerilog · FPGA (Cyclone V) · RISC-V RV32I · CAD" },
           { k: "Systems", v: "C · Linux (Ubuntu/Kali) · minnesnära arkitektur" },
