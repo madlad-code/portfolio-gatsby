@@ -24,7 +24,6 @@ const STATUS_ORDER: Record<string, number> = {
 const LINKS = [
   { label: "GitHub", href: `https://github.com/${GITHUB_USERNAME}` },
   { label: "LinkedIn", href: "https://www.linkedin.com/in/oscar-enghag/" },
-  { label: "Medium", href: "#" },
   { label: "Email", href: "mailto:oscar.enghag@gmail.com" },
 ];
 
@@ -46,7 +45,7 @@ function ContribGraph() {
     staleTime: 30 * 60 * 1000,
   });
 
-  if (isLoading) return <div className="text-xs text-ink-faint">$ fetching contributions…</div>;
+  if (isLoading) return <div className="text-xs text-ink-faint">$ hämtar aktivitet…</div>;
   if (isError || !data) return <div className="text-xs text-accent-ink">! kunde inte hämta GitHub-aktivitet</div>;
 
   // group days into weeks (7 rows × N cols)
@@ -67,7 +66,7 @@ function ContribGraph() {
   weeks.forEach((w, i) => {
     const m = new Date(w[0].date).getUTCMonth();
     if (m !== lastMonth) {
-      monthLabels.push({ col: i, label: new Date(w[0].date).toLocaleString("en", { month: "short" }) });
+      monthLabels.push({ col: i, label: new Date(w[0].date).toLocaleString("sv", { month: "short" }) });
       lastMonth = m;
     }
   });
@@ -102,9 +101,9 @@ function ContribGraph() {
       <div className="mt-3 flex items-center justify-between text-[11px] text-ink-faint">
         <span>{data.total} bidrag senaste året</span>
         <span className="flex items-center gap-1">
-          Less
+          Mindre
           {levelBg.map((c, i) => <span key={i} className={`h-3 w-3 rounded-[2px] ${c}`} />)}
-          More
+          Mer
         </span>
       </div>
     </div>
@@ -160,12 +159,15 @@ function Index() {
       <header>
         <h1 className="text-2xl font-bold tracking-wider text-accent-ink">OSCAR ENGHAG</h1>
         <p className="mt-3 text-ink-muted">
-          Civ.ing. Datateknik · LTH (2024–) <span className="text-ink-faint">|</span>{" "}
+          Civ.ing. Datateknik · LTH (2025–) <span className="text-ink-faint">|</span>{" "}
           FPGA / SystemVerilog · RISC-V <span className="text-ink-faint">|</span>{" "}
-          Quant · Systems
+          Försvarsmakten · Livgardet <span className="text-ink-faint">|</span>{" "}
+          Lund, SE
         </p>
-        <p className="mt-1 text-ink-faint">Försvarsmakten A8 · Livgardet · Lund, SE</p>
-        <nav className="mt-4 flex flex-wrap gap-x-5 gap-y-1 text-accent-ink">
+        <p className="mt-4 max-w-2xl text-[13px] text-ink-muted">
+          Jag drivs av en kombination av teknisk nyfikenhet och ett högt tempo i mitt lärande, vilket gör att jag snabbt kan sätta mig in i och lösa komplexa systemproblem. Min bakgrund som elitgymnast har gett mig en extrem disciplin och ett vinnande mindset som jag applicerar på varje kodrad och hårdvarukonstruktion jag tar mig an.
+        </p>
+        <nav className="mt-6 flex flex-wrap gap-x-5 gap-y-1 text-accent-ink">
           {LINKS.map((l) => (
             <a key={l.label} href={l.href} target="_blank" rel="noreferrer" className="hover:underline">
               {l.label}
@@ -177,10 +179,10 @@ function Index() {
       <SectionHeader n="01" title="SYSTEMAKTIVITET" />
       <div className="mt-4"><ContribGraph /></div>
 
-      <SectionHeader n="02" title="ACTIVE" />
-      <p className="mt-3 text-[13px] text-ink-muted">Pågående bygg och kurser i fokus just nu.</p>
+      <SectionHeader n="02" title="AKTIVA PROJEKT" />
+      <p className="mt-3 text-[13px] text-ink-muted">Här poängteras hur mina pågående projekt bygger djup expertis inom kritiska områden.</p>
       <div className="mt-4">
-        {projectsQ.isLoading && <div className="text-xs text-ink-faint">$ git fetch origin…</div>}
+        {projectsQ.isLoading && <div className="text-xs text-ink-faint">$ hämtar projekt…</div>}
         {projectsQ.isError && (
           <div className="text-xs text-accent-ink">
             ! kunde inte hämta GitHub: {(projectsQ.error as Error).message}
@@ -189,16 +191,15 @@ function Index() {
         {!projectsQ.isLoading && <CardGrid items={active} />}
       </div>
 
-      <SectionHeader n="03" title="OTHER REPOS" />
-      <p className="mt-3 text-[13px] text-ink-muted">Live från <code>github.com/{GITHUB_USERNAME}</code> — sorterat efter senaste push.</p>
+      <SectionHeader n="03" title="ÖVRIGA REPOS" />
+      <p className="mt-3 text-[13px] text-ink-muted">Live från <code>github.com/{GITHUB_USERNAME}</code> — sorterat efter senaste aktivitet.</p>
       <div className="mt-4"><CardGrid items={others} /></div>
 
       <SectionHeader n="04" title="STACK" />
       <div className="mt-4 grid gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5">
         {[
-          { k: "Hardware", v: "SystemVerilog · FPGA (Cyclone V) · RISC-V RV32I · CAD" },
-          { k: "Systems", v: "C · Linux (Ubuntu/Kali) · minnesnära arkitektur" },
-          { k: "Quant", v: "Python · NumPy · SciPy · options pricing · backtesting" },
+          { k: "Hårdvara", v: "SystemVerilog · FPGA (Cyclone V) · RISC-V RV32I · Quartus" },
+          { k: "Quant", v: "Python · NumPy · SciPy · options pricing · backtesting · Monte Carlo" },
           { k: "Web", v: "TypeScript · React · Gatsby · Netlify" },
         ].map((s) => (
           <div key={s.k} className="rounded border border-rule p-4">
@@ -208,20 +209,17 @@ function Index() {
         ))}
       </div>
 
-      <SectionHeader n="05" title="BACKGROUND" />
+      <SectionHeader n="05" title="BAKGRUND" />
       <pre className="mt-4 whitespace-pre-wrap text-[13px] text-ink-muted">
-{`2024–       Civ.ing. Datateknik · LTH
+{`2025–       Civ.ing. Datateknik · LTH
             algoritmer, systemarkitektur, hårdvara
-2023–24     Elektricitetsmekaniker · Försvarsmakten A8 · Livgardet
-            felsökning av komplexa elsystem
-2023        Internship · Noda Intelligent Systems
-2022–23     B2B-försäljning mot Saab, Ericsson, Försvarsmakten
-2022–23     VD · Full Koll UF — topp-10 nationellt
-2019–22     Teknikprogrammet · SSIS`}
+            Elektricitetsmekaniker · Försvarsmakten · Livgardet
+            B2B-försäljning mot Saab, Ericsson, Försvarsmakten
+            Internship · Noda Intelligent Systems`}
       </pre>
 
       <footer className="mt-16 border-t border-rule pt-6 text-xs text-ink-faint">
-        <div>$ built with tanstack · live från github api · last sync just now</div>
+        <div>$ skapad med tanstack · live från github api · uppdaterad precis nu</div>
       </footer>
     </main>
   );

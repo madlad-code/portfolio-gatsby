@@ -27,38 +27,37 @@ export interface ProjectOverride {
 }
 
 export const PROJECT_OVERRIDES: Record<string, ProjectOverride> = {
+  "fs-lap-sim": {
+    title: "FS Lap Sim",
+    status: "building",
+    stack: ["Python", "NumPy", "Pacejka"],
+    featured: true,
+    blurb: "Vehicle dynamics-simulator för Formula Student. Genom att implementera Pacejkas däckmodell bygger projektet djup expertis inom tillämpad matematik och fordonsdynamik.",
+  },
   "option_pricing": {
     title: "Quant Portfolio Engine",
     status: "building",
     stack: ["Python", "Black-Scholes", "Monte Carlo"],
     featured: true,
+    blurb: "Motor för portföljanalys och prissättning. Utvecklingen av Black-Scholes och Monte Carlo-simuleringar stärker min förståelse för kvantitativ finans och statistisk modellering.",
   },
   "trailing_stop_loss": {
     title: "Trailing Stop-Loss ML",
     status: "active",
     stack: ["Python", "ML", "Indicators"],
-    featured: true,
+    featured: false,
   },
   "Worker-Simulation": {
     title: "Worker Simulation",
     status: "coursework",
     stack: ["Python", "Concurrency", "GUI"],
+  },
+  "risc-v-pipeline": {
+    title: "RISC-V Pipeline",
+    status: "coursework",
+    stack: ["SystemVerilog", "FPGA", "Quartus"],
     featured: true,
-  },
-  "equally_weighted_index": {
-    title: "Equally Weighted Index",
-    status: "active",
-    stack: ["Python", "NumPy"],
-  },
-  "gmailsummarize": {
-    title: "Gmail Summarize",
-    status: "active",
-    stack: ["Python", "LLM"],
-  },
-  "noda_local": {
-    title: "Noda Local",
-    status: "active",
-    stack: ["TypeScript"],
+    blurb: "5-stegs RV32I-pipeline på Cyclone V. Projektet fördjupar min expertis inom datorarkitektur och digital hårdvarukonstruktion med fokus på timing och resurseffektivitet.",
   },
   "portfolio-gatsby": { hidden: true },
   "madlad-code": { hidden: true },
@@ -74,23 +73,17 @@ export const MANUAL_PROJECTS: Array<{
   featured?: boolean;
 }> = [
   {
-    title: "FS Lap Sim",
-    stack: ["Python", "NumPy", "Pacejka"],
+    title: "Quant Portfolio Engine",
+    stack: ["Python", "Black-Scholes", "Monte Carlo"],
     status: "building",
     featured: true,
-    blurb: "Vehicle dynamics lap-time simulator för Formula Student.",
+    blurb: "Motor för portföljanalys och prissättning. Utvecklingen av Black-Scholes och Monte Carlo-simuleringar stärker min förståelse för kvantitativ finans och statistisk modellering.",
   },
   {
     title: "RISC-V Pipeline",
     stack: ["SystemVerilog", "FPGA", "Quartus"],
     status: "coursework",
     featured: true,
-    blurb: "5-stage RV32I pipeline på Cyclone V.",
-  },
-  {
-    title: "Digital Provenance Platform",
-    stack: ["TypeScript", "B2B"],
-    status: "concept",
-    blurb: "Spårbarhet för fysisk-digitala assets.",
+    blurb: "5-stegs RV32I-pipeline på Cyclone V. Projektet fördjupar min expertis inom datorarkitektur och digital hårdvarukonstruktion med fokus på timing och resurseffektivitet.",
   },
 ];

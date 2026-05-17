@@ -80,7 +80,7 @@
   --ink-muted: oklch(0.78 0.008 250);
   --ink-faint: oklch(0.55 0.012 250);
   --rule: oklch(0.28 0.012 250);
-  --accent-ink: oklch(0.78 0.18 145);
+  --accent-ink: oklch(0.7 0.15 250);
   --background: var(--paper);
   --foreground: var(--ink);
   --card: var(--paper);
