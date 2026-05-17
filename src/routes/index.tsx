@@ -171,7 +171,7 @@ function Index() {
           Lund, SE
         </p>
         <p className="mt-4 max-w-2xl text-[13px] text-ink-muted">
-          Jag strävar efter att bli expert inom systemnära programmering med en djup fascination för lågnivå-implementationer och högprecisionsteknik. Genom att kombinera kvantitativ finans med rigorös ingenjörskonst bygger jag högpresterande system där varje klockcykel räknas. Min bakgrund som elitgymnast har gett mig den disciplin och det fokus som krävs för att bemästra komplex teknik i högt tempo.
+          Jag studerar datateknik vid LTH och drivs av en kombination av hög arbetsmoral och en genuin nyfikenhet för teknik. Mitt fokus ligger på SystemVerilog och kvantitativ finans, med en särskild fascination för fordon och storskaliga komplexa system. Jag trivs bäst i team där jag får bidra till gemensamma mål och ständigt utveckla min kompetens inom avancerad teknik.
         </p>
         <nav className="mt-6 flex flex-wrap gap-x-5 gap-y-1 text-accent-ink items-center">
           {LINKS.map((l) => (
